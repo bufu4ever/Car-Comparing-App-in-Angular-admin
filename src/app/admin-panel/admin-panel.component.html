@@ -1,0 +1,19 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button (click)="logout()">Logout</button>
+      <form (ngSubmit)="saveCar()" #carForm="ngForm">
+        <input type="text" [(ngModel)]="car.manufacturer" name="manufacturer" placeholder="Manufacturer" required>
+        <input type="text" [(ngModel)]="car.model" name="model" placeholder="Model" required>
+        <input type="number" [(ngModel)]="car.year" name="year" placeholder="Year" required>
+        <input type="text" [(ngModel)]="car.tireSize" name="tireSize" placeholder="Tire Size" required>
+        <input type="text" [(ngModel)]="car.fuelTankSize" name="fuelTankSize" placeholder="Fuel Tank Size" required>
+        <input type="number" [(ngModel)]="car.price" name="price" placeholder="Price" required>
+        <textarea [(ngModel)]="car.info" name="info" placeholder="Information about the vehicle" required></textarea>
+        <input type="file" (change)="onFileSelected($event)">
+        <button type="submit">{{ isEditMode ? 'Update Car' : 'Add Car' }}</button>
+      </form>
+      <button (click)="goBack()">Dashboard</button>
+    </div>
+  </div>
+</div>

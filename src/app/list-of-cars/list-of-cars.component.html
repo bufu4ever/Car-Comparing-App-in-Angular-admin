@@ -1,0 +1,22 @@
+<button (click)="goBack()">Back to Dashboard</button>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <div class="car-list">
+        <div *ngFor="let car of cars" class="car-item">
+          <div class="car-image-container">
+            <img [src]="car.imageUrl" alt="Car Image" class="car-image">
+            <div class="car-details">
+              <div>{{ car.manufacturer }} {{ car.model }} {{ car.year }}</div>
+              <div>Tire Size: {{ car.tireSize }}</div>
+              <div>Fuel Tank Size: {{ car.fuelTankSize }}</div>
+              <div>{{ car.info }}</div>
+              <button (click)="updateCar(car)">Update</button>
+              <button (click)="deleteCar(car)">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
